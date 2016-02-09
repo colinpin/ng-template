@@ -1,0 +1,62 @@
+p, button {
+    font-family: Courier New, Courier, monospace;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    line-height: 33px;
+}
+
+h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.task-item {
+    border-bottom: solid 1px #0000ff;
+    padding: 10px;
+}
+
+#buttons {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.column {
+    display: inline-block;
+    width: 40%;
+}
+
+#fields {
+    padding: 0px;
+}
+
+#add-new {
+    background-color: #0000ff;
+    margin: 10px 0 0 0;
+    padding: 10px;
+}
+
+
+.input-field {
+    margin: 10px 0 0 0;
+}
+
+#add-button {
+    margin: 20px 0 0 0;
+}
+
+.done {
+    height: 20px;
+    width: 20px;
+    font-size: 10px;
+    font-family: sans-serif;
+    border: solid 1px #ff0000;
+    background-color: #ffffff;
+    color: #ff0000;
+}
+
+.done:hover{
+    background-color: #ff0000;
+    color: #ffffff;
+}

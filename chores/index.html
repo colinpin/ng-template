@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chores">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+
+<body ng-controller="choresController">
+    <div id="buttons" class="col-sm-12">
+        <input type="text" ng-model="query" placeholder="Filter" />
+        <button ng-click="sortOrder='estTime'">Sort Asc</button>
+        <button ng-click="sortOrder='-estTime'">Sort Desc</button>
+        Current Filter: {{filter}}
+    </div>
+    <div id="content" class="col-sm-12">
+        <div id="add-new" class="col-sm-2">
+            <h4>Add class:</h4>
+            <div id="fields">
+                <div class="input-field">
+                    <input type="text" ng-model="newTask.task" placeholder="Task" />
+                </div>
+                <div class="input-field">
+                    <input type="text" ng-model="newTask.dueDate" placeholder="Due Date" />
+                </div>
+                <div class="input-field">
+                    <input type="text" ng-model="newTask.responsibleParty" placeholder="Responsible Party" />
+                </div>
+                <div class="input-field">
+                    <input type="text" ng-model="newTask.estTime" placeholder="Estimated Time" />
+                </div>
+                <div id="add-button">
+                    <button ng-click="addNewChore()">Add Chore</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class='task-item' ng-repeat="chore in chores | filter:query | orderBy:sortOrder">
+                <button class="done" ng-click="deleteChore($index)">x</button>
+                <h1>{{chore.task | uppercase}}</h1>
+                <p>{{chore.dueDate | date}}, {{chore.responsibleParty}}, {{chore.estTime}}</p>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/components/chores/chores-controller.js"></script>
+</body>
+
+</html>
